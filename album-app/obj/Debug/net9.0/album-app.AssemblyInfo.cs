@@ -14,6 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f3eb252b17c6573ae3e4976bf2158ea0d86181d")]
+<<<<<<< Updated upstream
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aac0f77d3c94a10bb96a7db81f9599825b3418ae")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ba0b6538d2d692312fb694fb623c790e9015e0b")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("album-app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("album-app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
