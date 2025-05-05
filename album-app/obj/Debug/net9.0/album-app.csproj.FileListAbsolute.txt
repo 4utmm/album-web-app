@@ -95,3 +95,11 @@ C:\album-web-app\album-app\obj\Debug\net9.0\refint\album-app.dll
 C:\album-web-app\album-app\obj\Debug\net9.0\album-app.pdb
 C:\album-web-app\album-app\obj\Debug\net9.0\album-app.genruntimeconfig.cache
 C:\album-web-app\album-app\obj\Debug\net9.0\ref\album-app.dll
+C:\album-web-app\album-app\bin\Debug\net9.0\EmbedIO.dll
+C:\album-web-app\album-app\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\album-web-app\album-app\bin\Debug\net9.0\SpotifyAPI.Web.dll
+C:\album-web-app\album-app\bin\Debug\net9.0\SpotifyAPI.Web.Auth.dll
+C:\album-web-app\album-app\bin\Debug\net9.0\Swan.Lite.dll
+C:\album-web-app\album-app\obj\Debug\net9.0\album-app.csproj.AssemblyReference.cache
+C:\album-web-app\album-app\obj\Debug\net9.0\album-app.sourcelink.json
+C:\album-web-app\album-app\obj\Debug\net9.0\album-app.csproj.Up2Date

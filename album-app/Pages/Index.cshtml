@@ -3,8 +3,14 @@
 @{
     ViewData["Title"] = "Home page";
 }
+@{     
+        SpotifyRepository repo = new SpotifyRepository();
+        var albumName = (await repo.GetAlbum()).Name;
+    }
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+    <p>Your favourite song appears to be @albumName</p>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
