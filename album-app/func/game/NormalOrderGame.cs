@@ -1,54 +1,99 @@
+using SpotifyAPI.Web;
+
 class NormalOrderGame : IOrderGame {
 
-    public NormalOrderGame() { //NOT READY
+    private FullAlbum album; 
+
+    private List<SimpleTrack> trackList;
+    private List<SimpleTrack> shuffledTrackList;
+    private SimpleTrack[] finalTackList;
+    private Boolean solved;
+    private static Random rng = new Random();
+
+    public NormalOrderGame(FullAlbum album) { //NOT READY
+        this.album = album;
+        this.trackList = getTrackList();
+        this.shuffledTrackList = this.trackList;
+        solved = false;
+
+        int count = shuffledTrackList.Count;
+        this.finalTackList = new SimpleTrack[count];
+
+        while (count > 1) {
+            count--;
+            int next = rng.Next(count + 1);
+            var value = this.shuffledTrackList[next];
+            this.shuffledTrackList[next] = this.shuffledTrackList[count];
+            this.shuffledTrackList[count] = value;
+        }
 
     }
 
-    public Boolean isOrderCorrect(){ //NOT READY
-        return true;
+    public Boolean isOrderCorrect(){
+        return solved;
     }
 
-    public int[] incorrectTrackIndex(){ //NOT READY
-        return null;
+    public int[] incorrectTrackIndex(){ 
+        int[] incorrectTracks = new int[album.TotalTracks];
+    
+        int pointer = 0;
+        foreach (SimpleTrack t in trackList){
+            if (t.GetHashCode != finalTackList[pointer].GetHashCode){
+                incorrectTracks[pointer] = finalTackList[pointer].TrackNumber;
+            }
+            else {
+                incorrectTracks[pointer] = 0;
+            }
+        }
+    
+        return incorrectTracks;
     }
 
-    public int getTrackCount(){ //NOT READY
-        return 0;
+    public int getTrackCount(){
+        return album.TotalTracks;
     }
 
-    public string[] getTrackList(){ //NOT READY
-        return null;
+    public List<SimpleTrack> getTrackList(){
+        return album.Tracks.Items;
     }
 
-    public string[] getShuffledTrackList(){ //NOT READY
-        return null;
+    public List<SimpleTrack> getShuffledTrackList(){
+     return shuffledTrackList;
     }
 
-    public string getAlbumArt(){  //NOT READY
-        return null;
+    public string getAlbumArt(){
+        return album.Images[0].Url;
     }
 
-    public string getAlbumName(){ //NOT READY
-        return null;
+    public string getAlbumName(){
+        return album.Name;
     }
 
-    public string[] getAlbumArtists(){ //NOT READY
-        return null;
+    public List<SimpleArtist> getAlbumArtists(){
+        return album.Artists;
     }
 
-    public string getAlbumReleaseDate(){ //NOT READY
-        return null;
+    public string getAlbumReleaseDate(){
+        return album.ReleaseDate;
     }
 
-    public void placeTrack(){ //NOT READY
-
+    public void placeTrack(SimpleTrack track, int index){
+        finalTackList[index] = track;
     }
 
-    public void removeTrack(){ //NOT READY
-
+    public void removeTrack(int index){
+        finalTackList[index] = null;
     }
 
-    public void solve(){ //NOT READY
+    public void solve(){
+        int pointer = 0;
+        foreach (SimpleTrack t in trackList){
+            if (t.GetHashCode != finalTackList[pointer].GetHashCode){
+                solved = false;
+                return;
+            }
+        }
         
+        solved = true;
     }
 }

@@ -61,12 +61,12 @@ interface IOrderGame {
     /// <summary>
     /// Places shuffled track into final array.
     /// </summary>
-    void placeTrack();
+    void placeTrack(SimpleTrack track, int index);
 
     /// <summary>
     /// Removes shuffled track into final array.
     /// </summary>
-    void removeTrack();
+    void removeTrack(int index);
 
     /// <summary>
     /// Scan final array to see if ordered correctly.

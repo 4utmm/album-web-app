@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("album-app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb1985735a6821ab107db738d0194a69e7c6d9f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0c1584dcf121a0f05a43918e89934884624d51f")]
 [assembly: System.Reflection.AssemblyProductAttribute("album-app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("album-app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
