@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Primitives;
+using SpotifyAPI.Web;
 
 interface IOrderGame {
 
@@ -25,13 +26,13 @@ interface IOrderGame {
     /// Method retrieves the name of each album.
     /// </summary>
     /// <returns>Returns array of strings of each track name corresponding to the index of the album.</returns>
-    string[] getTrackList();
+    List<SimpleTrack> getTrackList();
 
     /// <summary>
     /// Method takes the track list then shuffles it.
     /// </summary>
     /// <returns>Returns array of strings of each track name in no particular order.</returns>
-    string[] getShuffledTrackList();
+    List<SimpleTrack> getShuffledTrackList();
 
     /// <summary>
     /// Gets the album art corresponding to the album.
@@ -49,7 +50,7 @@ interface IOrderGame {
     /// Retrieve's the artist who created the album
     /// </summary>
     /// <returns>Returns array of string of artists who created album.</returns>
-    string[] getAlbumArtists();
+    List<SimpleArtist> getAlbumArtists();
 
     /// <summary>
     /// Retrieves the release date of the album.
