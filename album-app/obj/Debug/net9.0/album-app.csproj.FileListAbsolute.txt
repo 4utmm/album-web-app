@@ -17,7 +17,6 @@ C:\album-web-app\album-app\obj\Debug\net9.0\album-app.RazorAssemblyInfo.cs
 C:\album-web-app\album-app\obj\Debug\net9.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\album-web-app\album-app\obj\Debug\net9.0\scopedcss\bundle\album-app.styles.css
 C:\album-web-app\album-app\obj\Debug\net9.0\scopedcss\projectbundle\album-app.bundle.scp.css
-C:\album-web-app\album-app\obj\Debug\net9.0\compressed\jfcic4qxgo-b9sayid5wm.gz
 C:\album-web-app\album-app\obj\Debug\net9.0\compressed\mxyb36nsrd-61n19gt1b8.gz
 C:\album-web-app\album-app\obj\Debug\net9.0\compressed\yosvpy2w6l-xtxxf3hu2r.gz
 C:\album-web-app\album-app\obj\Debug\net9.0\compressed\zkm7xh86le-bqjiyaj88i.gz
@@ -103,3 +102,4 @@ C:\album-web-app\album-app\bin\Debug\net9.0\Swan.Lite.dll
 C:\album-web-app\album-app\obj\Debug\net9.0\album-app.csproj.AssemblyReference.cache
 C:\album-web-app\album-app\obj\Debug\net9.0\album-app.sourcelink.json
 C:\album-web-app\album-app\obj\Debug\net9.0\album-app.csproj.Up2Date
+C:\album-web-app\album-app\obj\Debug\net9.0\compressed\jfcic4qxgo-lm82350d4v.gz

@@ -1,0 +1,32 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Order Game";
+    
+    SpotifyRepository repo = new SpotifyRepository();
+    var game = new NormalOrderGame(await repo.GetAlbum());
+    var art = game.getAlbumArt();
+    var name = game.getAlbumName();
+    var trackCount = game.getTrackCount();
+    var artists = game.getAlbumArtists();
+    var releaseDate = DateTime.Parse(game.getAlbumReleaseDate()).ToString("MMM dd, yyyy");
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+
+    <div id="order-game">
+        <img src="@art" id="game-album-art" alt="Cover art from album @name">
+
+        <span id="game-album-name">@name</span>
+        
+        @for (int i = 0; i < artists.Count-1; i++)
+        {
+            <span class="game-artist-name">@artists[i].Name, </span>
+        }
+
+        <span class="game-artist-name">@artists[artists.Count-1].Name</span>
+
+        <span id="game-release-date">@releaseDate</span>
+    </div>
+</div>
