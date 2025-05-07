@@ -5,7 +5,8 @@
 }
 @{     
         SpotifyRepository repo = new SpotifyRepository();
-        var albumName = (await repo.GetAlbum()).Name;
+        var album = (await repo.GetAlbum());
+        var albumName = album.Name;
     }
 
 
