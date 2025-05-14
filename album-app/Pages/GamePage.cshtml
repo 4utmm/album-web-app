@@ -47,7 +47,10 @@
         <div id="answer-track-list">
             @for (int i = 0; i < trackCount; i++)
             {
-                <asp:Button class="track-answer"></asp:Button>
+                <asp:Button class="track-answer">
+                    <span class="answer-index">@(i+1).</span>
+                    <span class="answer-name"></span>
+                </asp:Button>
             }
         </div>
     </div>
