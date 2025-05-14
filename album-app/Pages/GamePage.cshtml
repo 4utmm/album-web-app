@@ -1,0 +1,57 @@
+﻿@page
+@{
+
+    ViewData["Title"] = "Order Game";
+    
+    SpotifyRepository repo = new SpotifyRepository();
+    var game = new NormalOrderGame(await repo.GetAlbum());
+    var art = game.getAlbumArt();
+    var name = game.getAlbumName();
+    var trackCount = game.getTrackCount();
+    var artists = game.getAlbumArtists();
+    var releaseDate = DateTime.Parse(game.getAlbumReleaseDate()).ToString("MMM dd, yyyy");
+
+    var trackList = game.getTrackList();
+    var shuffledTrackList = game.getShuffledTrackList();
+    var answerTrackList = new String[trackCount];
+    for (int i = 0; i < trackCount; i++)
+    {
+        answerTrackList[i] = "";
+    }
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+
+    <div id="order-game">
+        <img src="@art" id="game-album-art" alt="Cover art from album @name">
+
+        <span id="game-album-name">@name</span>
+        
+        @for (int i = 0; i < artists.Count-1; i++)
+        {
+            <span class="game-artist-name">@artists[i].Name, </span>
+        }
+
+        <span class="game-artist-name">@artists[artists.Count-1].Name</span>
+
+        <span id="game-release-date">@releaseDate</span>
+
+        <div id="mixed-track-list">
+            @for (int i = 0; i < trackCount; i++) 
+            {
+                <asp:Button class="track-bank">@shuffledTrackList.ElementAt(i).Name</asp:Button>
+            }
+        </div>
+
+        <div id="answer-track-list">
+            @for (int i = 0; i < trackCount; i++)
+            {
+                <asp:Button class="track-answer">
+                    <span class="answer-index">@(i+1).</span>
+                    <span class="answer-name"></span>
+                </asp:Button>
+            }
+        </div>
+    </div>
+</div>

@@ -29,3 +29,78 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+#order-game {
+  margin: 5vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#game-album-art {
+  width: 35%;
+  border: 4px #1DB954 solid;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 3px #1DB954;
+  margin-left: 32.5%;
+  margin-right: 32.5%;
+}
+
+#game-album-name {
+  font-size: 3.5em;
+  color: #191414;
+  margin-top: 3vh;
+}
+
+.game-artist-name {
+  font-size: 2.5em;
+  color: #191414;
+}
+
+#game-release-date {
+  font-size: 1.5em;
+  color: #191414;
+}
+
+#mixed-track-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid #938989;
+  border-radius: 5px;
+  width: 100%;
+  margin: 20px;
+}
+
+.track-bank {
+  font-size: 1em;
+  background-color: none;
+  border: 2px solid #938989;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 5px;
+  margin: 3px;
+}
+
+#answer-track-list {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.track-answer {
+  font-size: 1em;
+  background-color: none;
+  border: 2px solid #938989;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  display: row;
+  justify-content: space-between;
+  margin: 3px;
+}
