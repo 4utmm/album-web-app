@@ -61,3 +61,38 @@ body {
   font-size: 1.5em;
   color: #191414;
 }
+
+#mixed-track-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid #938989;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.track-bank {
+  font-size: 1em;
+  background-color: none;
+  border: 2px solid #938989;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 5px;
+  margin: 3px;
+}
+
+#answer-track-list {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.track-answer {
+  font-size: 1em;
+  background-color: none;
+  border: 2px solid #938989;
+  border-radius: 5px;
+  width: 100%;
+  height: 1em;
+}

@@ -1,6 +1,6 @@
 ﻿@page
-@model PrivacyModel
 @{
+
     ViewData["Title"] = "Order Game";
     
     SpotifyRepository repo = new SpotifyRepository();
@@ -10,6 +10,14 @@
     var trackCount = game.getTrackCount();
     var artists = game.getAlbumArtists();
     var releaseDate = DateTime.Parse(game.getAlbumReleaseDate()).ToString("MMM dd, yyyy");
+
+    var trackList = game.getTrackList();
+    var shuffledTrackList = game.getShuffledTrackList();
+    var answerTrackList = new String[trackCount];
+    for (int i = 0; i < trackCount; i++)
+    {
+        answerTrackList[i] = "";
+    }
 }
 
 <div class="text-center">
@@ -28,5 +36,19 @@
         <span class="game-artist-name">@artists[artists.Count-1].Name</span>
 
         <span id="game-release-date">@releaseDate</span>
+
+        <div id="mixed-track-list">
+            @for (int i = 0; i < trackCount; i++) 
+            {
+                <asp:Button class="track-bank">@shuffledTrackList.ElementAt(i).Name</asp:Button>
+            }
+        </div>
+
+        <div id="answer-track-list">
+            @for (int i = 0; i < trackCount; i++)
+            {
+                <asp:Button class="track-answer"></asp:Button>
+            }
+        </div>
     </div>
 </div>
