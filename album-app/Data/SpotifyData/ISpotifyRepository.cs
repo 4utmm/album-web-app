@@ -1,5 +1,5 @@
 using SpotifyAPI.Web;
 
 interface ISpotifyRepository {
-    Task<FullAlbum> GetAlbum();
+    Task<Album> GetAlbum();
 }

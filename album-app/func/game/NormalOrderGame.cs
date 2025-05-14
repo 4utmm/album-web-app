@@ -2,22 +2,22 @@ using SpotifyAPI.Web;
 
 class NormalOrderGame : IOrderGame {
 
-    private FullAlbum album; 
+    private Album album; 
 
-    private List<SimpleTrack> trackList;
-    private List<SimpleTrack> shuffledTrackList;
-    private SimpleTrack[] finalTackList;
+    private List<Song> trackList;
+    private List<Song> shuffledTrackList;
+    private List<Song> finalTrackList;
     private Boolean solved;
     private static Random rng = new Random();
 
-    public NormalOrderGame(FullAlbum album) { //NOT READY
+    public NormalOrderGame(Album album) { //NOT READY
         this.album = album;
-        this.trackList = getTrackList();
+        this.trackList = album.Songs;
         this.shuffledTrackList = this.trackList;
         solved = false;
 
         int count = shuffledTrackList.Count;
-        this.finalTackList = new SimpleTrack[count];
+        this.finalTrackList = new List<Song>();
 
         while (count > 1) {
             count--;
@@ -34,12 +34,12 @@ class NormalOrderGame : IOrderGame {
     }
 
     public int[] incorrectTrackIndex(){ 
-        int[] incorrectTracks = new int[album.TotalTracks];
+        int[] incorrectTracks = new int[album.TrackCount];
     
         int pointer = 0;
-        foreach (SimpleTrack t in trackList){
-            if (t.GetHashCode != finalTackList[pointer].GetHashCode){
-                incorrectTracks[pointer] = finalTackList[pointer].TrackNumber;
+        foreach (Song t in trackList){
+            if (t.ID != finalTrackList[pointer].ID){
+                incorrectTracks[pointer] = finalTrackList[pointer].TrackPos;
             }
             else {
                 incorrectTracks[pointer] = 0;
@@ -50,19 +50,19 @@ class NormalOrderGame : IOrderGame {
     }
 
     public int getTrackCount(){
-        return album.TotalTracks;
+        return album.TrackCount;
     }
 
-    public List<SimpleTrack> getTrackList(){
-        return album.Tracks.Items;
+    public List<Song> getTrackList(){
+        return album.Songs;
     }
 
-    public List<SimpleTrack> getShuffledTrackList(){
+    public List<Song> getShuffledTrackList(){
      return shuffledTrackList;
     }
 
     public string getAlbumArt(){
-        return album.Images[0].Url;
+        return album.AlbumArt;
     }
 
     public string getAlbumName(){
@@ -70,25 +70,25 @@ class NormalOrderGame : IOrderGame {
     }
 
     public List<SimpleArtist> getAlbumArtists(){
-        return album.Artists;
+        return album.ArtistName;
     }
 
     public string getAlbumReleaseDate(){
         return album.ReleaseDate;
     }
 
-    public void placeTrack(SimpleTrack track, int index){
-        finalTackList[index] = track;
+    public void placeTrack(Song track, int index){
+        finalTrackList[index] = track;
     }
 
     public void removeTrack(int index){
-        finalTackList[index] = null;
+        finalTrackList[index] = null;
     }
 
     public void solve(){
         int pointer = 0;
-        foreach (SimpleTrack t in trackList){
-            if (t.GetHashCode != finalTackList[pointer].GetHashCode){
+        foreach (Song t in trackList){
+            if (t.GetHashCode != finalTrackList[pointer].GetHashCode){
                 solved = false;
                 return;
             }

@@ -26,13 +26,13 @@ interface IOrderGame {
     /// Method retrieves the name of each album.
     /// </summary>
     /// <returns>Returns array of strings of each track name corresponding to the index of the album.</returns>
-    List<SimpleTrack> getTrackList();
+    List<Song> getTrackList();
 
     /// <summary>
     /// Method takes the track list then shuffles it.
     /// </summary>
     /// <returns>Returns array of strings of each track name in no particular order.</returns>
-    List<SimpleTrack> getShuffledTrackList();
+    List<Song> getShuffledTrackList();
 
     /// <summary>
     /// Gets the album art corresponding to the album.
@@ -61,7 +61,7 @@ interface IOrderGame {
     /// <summary>
     /// Places shuffled track into final array.
     /// </summary>
-    void placeTrack(SimpleTrack track, int index);
+    void placeTrack(Song track, int index);
 
     /// <summary>
     /// Removes shuffled track into final array.
